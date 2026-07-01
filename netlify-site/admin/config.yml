@@ -1,0 +1,107 @@
+backend:
+  name: git-gateway
+  branch: main   # change to "master" here if your GitHub repo's default branch is called master
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site"
+    label: "Website Content"
+    files:
+
+      - name: "hero"
+        label: "1. Home / Hero"
+        file: "content/hero.json"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Role / Title", name: "role", widget: "string" }
+          - { label: "Intro Paragraph", name: "intro", widget: "text" }
+          - { label: "Photo", name: "photo", widget: "image", required: false }
+          - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+          - { label: "GitHub URL", name: "github", widget: "string", required: false }
+          - { label: "Email", name: "email", widget: "string", required: false }
+          - { label: "CV File (PDF)", name: "cv", widget: "file", required: false }
+
+      - name: "about"
+        label: "2. About"
+        file: "content/about.json"
+        fields:
+          - { label: "Photo", name: "photo", widget: "image", required: false }
+          - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+          - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+          - { label: "Based In", name: "location", widget: "string" }
+          - { label: "Interests", name: "interests", widget: "string" }
+
+      - name: "education"
+        label: "3. Education"
+        file: "content/education.json"
+        fields:
+          - label: "Entries"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Meta (years / board)", name: "meta", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+      - name: "skills"
+        label: "4. Skills"
+        file: "content/skills.json"
+        fields:
+          - label: "Categories"
+            name: "categories"
+            widget: "list"
+            fields:
+              - { label: "Category Name", name: "category", widget: "string" }
+              - label: "Skill Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Skill Name", name: "name", widget: "string" }
+                  - { label: "Level (0-100)", name: "level", widget: "number", min: 0, max: 100, default: 70 }
+
+      - name: "projects"
+        label: "5. Projects"
+        file: "content/projects.json"
+        fields:
+          - label: "Entries"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Tags (comma separated)", name: "tags", widget: "string", required: false }
+
+      - name: "gallery"
+        label: "6. Gallery"
+        file: "content/gallery.json"
+        fields:
+          - label: "Photos"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+
+      - name: "certificates"
+        label: "7. Certificates"
+        file: "content/certificates.json"
+        fields:
+          - label: "Entries"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Certificate Name", name: "title", widget: "string" }
+              - { label: "Issuer & Year", name: "meta", widget: "string" }
+              - { label: "Certificate File / Image", name: "file", widget: "file", required: false }
+
+      - name: "contact"
+        label: "8. Contact"
+        file: "content/contact.json"
+        fields:
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string", required: false }
+          - { label: "Location", name: "location", widget: "string" }

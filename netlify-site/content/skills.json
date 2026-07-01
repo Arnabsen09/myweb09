@@ -1,0 +1,27 @@
+{
+  "categories": [
+    {
+      "category": "Clinical Skills",
+      "items": [
+        { "name": "Surgical Assistance", "level": 80 },
+        { "name": "Sterilization & CSSD", "level": 85 },
+        { "name": "Patient Safety", "level": 90 }
+      ]
+    },
+    {
+      "category": "Soft Skills",
+      "items": [
+        { "name": "Teamwork", "level": 90 },
+        { "name": "Communication", "level": 85 },
+        { "name": "Attention to Detail", "level": 92 }
+      ]
+    },
+    {
+      "category": "Digital Skills",
+      "items": [
+        { "name": "Web Design", "level": 75 },
+        { "name": "Content Creation", "level": 70 }
+      ]
+    }
+  ]
+}

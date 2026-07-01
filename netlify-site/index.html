@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arnab Sen | Operation Theatre Technology Student</title>
+<!-- Netlify Identity: needed on this page too so invite/login links work -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+  :root{
+    --bg:#060d1a; --bg-panel:#0b1626; --bg-panel-2:#0e1c30;
+    --teal:#2dd4bf; --text:#eef3f8; --text-dim:#9fb0c3;
+    --border:rgba(45,212,191,0.25); --gold:#d4af6a; --radius:14px; --max-w:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;line-height:1.6;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  section{padding:90px 24px;}
+  .wrap{max-width:var(--max-w);margin:0 auto;}
+  .eyebrow{color:var(--teal);letter-spacing:2px;text-transform:uppercase;font-size:.8rem;font-weight:600;margin-bottom:10px;}
+  h2.section-title{font-size:2.2rem;margin-bottom:40px;}
+  h2.section-title span{color:var(--teal);}
+  header{position:sticky;top:0;z-index:50;background:rgba(6,13,26,0.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.06);}
+  nav{max-width:var(--max-w);margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.15rem;}
+  .logo .mark{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--teal),#0e7a6c);display:flex;align-items:center;justify-content:center;color:#04150f;font-weight:800;}
+  .nav-links{display:flex;gap:28px;font-size:.95rem;color:var(--text-dim);}
+  .nav-links a{position:relative;padding-bottom:4px;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--text);}
+  .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--teal);}
+  .cv-btn{border:1px solid var(--teal);color:var(--teal);padding:10px 18px;border-radius:8px;font-size:.9rem;font-weight:600;white-space:nowrap;transition:background .2s,color .2s;}
+  .cv-btn:hover{background:var(--teal);color:#04150f;}
+  .menu-toggle{display:none;background:none;border:none;color:var(--text);font-size:1.6rem;cursor:pointer;}
+  #home{padding-top:70px;background:radial-gradient(circle at 80% 10%,rgba(45,212,191,0.08),transparent 40%),var(--bg);}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
+  .wave{font-size:1.6rem;}
+  .hero-name{font-size:3.4rem;font-weight:800;line-height:1.1;margin:8px 0 6px;}
+  .hero-name span{color:var(--teal);}
+  .hero-role{font-size:1.3rem;font-weight:600;margin-bottom:18px;border-bottom:2px solid var(--teal);display:inline-block;padding-bottom:4px;}
+  .hero-desc{color:var(--text-dim);max-width:520px;margin-bottom:28px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px;}
+  .btn-solid{background:var(--teal);color:#04150f;padding:13px 22px;border-radius:8px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:transform .2s;}
+  .btn-solid:hover{transform:translateY(-2px);}
+  .btn-outline{border:1px solid var(--teal);color:var(--teal);padding:13px 22px;border-radius:8px;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:background .2s,color .2s;}
+  .btn-outline:hover{background:var(--teal);color:#04150f;}
+  .socials{display:flex;gap:12px;}
+  .socials a{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:background .2s,transform .2s;}
+  .socials a:hover{background:var(--teal);color:#04150f;transform:translateY(-2px);}
+  .hero-photo-wrap{position:relative;display:flex;justify-content:center;}
+  .photo-placeholder,.hero-photo-wrap img{width:100%;max-width:420px;aspect-ratio:3/4;border-radius:200px 200px 40px 40px;background:linear-gradient(160deg,var(--bg-panel-2),#142a44);border:1px solid var(--border);object-fit:cover;}
+  .photo-placeholder{display:flex;align-items:center;justify-content:center;color:var(--text-dim);text-align:center;font-size:.95rem;padding:20px;}
+  .side-badges{position:absolute;right:-10px;top:10px;display:flex;flex-direction:column;gap:14px;}
+  .badge{background:rgba(6,13,26,0.7);border:1px solid var(--border);border-radius:10px;padding:10px 14px;font-size:.78rem;color:var(--text-dim);text-align:center;min-width:110px;}
+  .badge .icon{font-size:1.2rem;color:var(--teal);margin-bottom:4px;}
+  .stat-bar{margin-top:60px;border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:30px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .stat{display:flex;gap:14px;align-items:flex-start;}
+  .stat .icon{font-size:1.6rem;color:var(--teal);}
+  .stat h4{font-size:1rem;margin-bottom:2px;}
+  .stat p{color:var(--text-dim);font-size:.85rem;}
+  .scroll-down{text-align:center;color:var(--text-dim);font-size:.85rem;margin-top:40px;}
+  #about{background:var(--bg-panel);}
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center;}
+  .about-photo{border-radius:var(--radius);background:linear-gradient(160deg,var(--bg-panel-2),#142a44);border:1px solid var(--border);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;color:var(--text-dim);padding:20px;text-align:center;overflow:hidden;}
+  .about-photo img{width:100%;height:100%;object-fit:cover;}
+  .about-text p{color:var(--text-dim);margin-bottom:16px;}
+  .about-facts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px;}
+  .fact{background:var(--bg-panel-2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+  .fact span{display:block;color:var(--text-dim);font-size:.78rem;}
+  .fact strong{font-size:.95rem;}
+  .timeline{border-left:2px solid var(--border);padding-left:30px;display:flex;flex-direction:column;gap:34px;}
+  .tl-item{position:relative;}
+  .tl-item::before{content:"";position:absolute;left:-37px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(45,212,191,0.15);}
+  .tl-item h3{font-size:1.1rem;}
+  .tl-item .tl-meta{color:var(--teal);font-size:.85rem;margin:4px 0 8px;}
+  .tl-item p{color:var(--text-dim);font-size:.92rem;}
+  #skills{background:var(--bg-panel);}
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .skill-card{background:var(--bg-panel-2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;}
+  .skill-card h3{font-size:1rem;margin-bottom:14px;}
+  .skill-bar-row{margin-bottom:12px;}
+  .skill-bar-row .lbl{display:flex;justify-content:space-between;font-size:.82rem;color:var(--text-dim);margin-bottom:5px;}
+  .bar-track{height:6px;border-radius:4px;background:rgba(255,255,255,0.08);overflow:hidden;}
+  .bar-fill{height:100%;background:linear-gradient(90deg,var(--teal),#0e7a6c);border-radius:4px;}
+  .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .project-card{background:var(--bg-panel-2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .2s,border-color .2s;}
+  .project-card:hover{transform:translateY(-4px);border-color:var(--teal);}
+  .project-thumb{aspect-ratio:16/10;background:linear-gradient(160deg,#142a44,#0b1626);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:.85rem;overflow:hidden;}
+  .project-thumb img{width:100%;height:100%;object-fit:cover;}
+  .project-body{padding:18px 20px 22px;}
+  .project-body h3{font-size:1.02rem;margin-bottom:6px;}
+  .project-body p{color:var(--text-dim);font-size:.88rem;margin-bottom:12px;}
+  .tag{display:inline-block;font-size:.72rem;color:var(--teal);border:1px solid var(--border);border-radius:20px;padding:3px 10px;margin:0 6px 6px 0;}
+  #gallery{background:var(--bg-panel);}
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .gallery-item{aspect-ratio:1/1;border-radius:10px;background:linear-gradient(160deg,#142a44,#0b1626);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-dim);font-size:.8rem;text-align:center;padding:10px;overflow:hidden;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;}
+  .certs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .cert-card{background:var(--bg-panel-2);border:1px solid var(--border);border-radius:var(--radius);padding:20px;display:flex;gap:16px;align-items:flex-start;}
+  .cert-card .icon{font-size:1.6rem;color:var(--gold);}
+  .cert-card h3{font-size:.98rem;margin-bottom:4px;}
+  .cert-card p{color:var(--text-dim);font-size:.85rem;}
+  #contact{background:var(--bg-panel);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .contact-info .item{display:flex;gap:14px;margin-bottom:20px;align-items:flex-start;}
+  .contact-info .icon{color:var(--teal);font-size:1.2rem;}
+  .contact-info h4{font-size:.92rem;margin-bottom:2px;}
+  .contact-info p{color:var(--text-dim);font-size:.88rem;}
+  form{display:flex;flex-direction:column;gap:14px;}
+  input,textarea{background:var(--bg-panel-2);border:1px solid var(--border);border-radius:8px;padding:13px 14px;color:var(--text);font-family:inherit;font-size:.92rem;}
+  textarea{min-height:120px;resize:vertical;}
+  input::placeholder,textarea::placeholder{color:var(--text-dim);}
+  .send-btn{background:var(--teal);color:#04150f;border:none;padding:13px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.95rem;}
+  #form-status{font-size:.85rem;color:var(--teal);min-height:20px;}
+  footer{text-align:center;padding:30px 24px;color:var(--text-dim);font-size:.82rem;border-top:1px solid rgba(255,255,255,0.06);}
+  footer a{color:var(--teal);}
+  .empty-note{color:var(--text-dim);font-size:.9rem;grid-column:1/-1;}
+  @media (max-width:900px){
+    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;}
+    .about-photo{order:-1;max-width:340px;margin:0 auto;}
+    .stat-bar{grid-template-columns:1fr 1fr;}
+    .skills-grid,.projects-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:repeat(3,1fr);}
+    .certs-grid{grid-template-columns:1fr;}
+    .side-badges{display:none;}
+  }
+  @media (max-width:640px){
+    .nav-links{position:fixed;top:70px;left:0;right:0;background:var(--bg-panel);flex-direction:column;padding:20px 24px;gap:16px;border-bottom:1px solid var(--border);transform:translateY(-150%);transition:transform .25s;}
+    .nav-links.open{transform:translateY(0);}
+    .menu-toggle{display:block;}
+    .cv-btn{display:none;}
+    .hero-name{font-size:2.4rem;}
+    .stat-bar{grid-template-columns:1fr;}
+    .skills-grid,.projects-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    section{padding:60px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><div class="mark">AS</div><span id="navName">Arnab Sen</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#" id="cvBtn" class="cv-btn" download style="display:none">Download CV ↓</a>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </nav>
+</header>
+
+<section id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="wave">Hi, I'm 👋</div>
+        <h1 class="hero-name" id="heroName">Arnab <span>Sen</span></h1>
+        <div class="hero-role" id="heroRole">Operation Theatre Technology Student</div>
+        <p class="hero-desc" id="heroIntro">Loading…</p>
+        <div class="hero-ctas">
+          <a href="#about" class="btn-solid">Explore More →</a>
+          <a href="#projects" class="btn-outline">💼 View My Work</a>
+        </div>
+        <div class="socials" id="heroSocials"></div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="photo-placeholder" id="heroPhotoWrap">Photo loading…</div>
+        <div class="side-badges">
+          <div class="badge"><div class="icon">🩹</div>Surgical Assistance</div>
+          <div class="badge"><div class="icon">🛡️</div>Patient Safety</div>
+          <div class="badge"><div class="icon">♨️</div>Sterilization &amp; CSSD</div>
+          <div class="badge"><div class="icon">❤️</div>Compassion &amp; Care</div>
+        </div>
+      </div>
+    </div>
+    <div class="stat-bar">
+      <div class="stat"><div class="icon">🎓</div><div><h4>BOTT Student</h4><p>Batch 2025 – 2028</p></div></div>
+      <div class="stat"><div class="icon">📖</div><div><h4>Learning Everyday</h4><p>To be better</p></div></div>
+      <div class="stat"><div class="icon">💓</div><div><h4>Passionate About Healthcare</h4><p>And saving lives</p></div></div>
+      <div class="stat"><div class="icon">🏆</div><div><h4>Goal</h4><p>To become a skilled OT Technologist</p></div></div>
+    </div>
+    <div class="scroll-down">🖱 Scroll Down ⌄</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">Get To Know Me</div>
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="about-grid">
+      <div class="about-photo" id="aboutPhotoWrap">Photo loading…</div>
+      <div class="about-text">
+        <p id="aboutP1">Loading…</p>
+        <p id="aboutP2"></p>
+        <div class="about-facts">
+          <div class="fact"><span>Name</span><strong id="factName">—</strong></div>
+          <div class="fact"><span>Program</span><strong>BOTT, 2025–2028</strong></div>
+          <div class="fact"><span>Based in</span><strong id="factLocation">—</strong></div>
+          <div class="fact"><span>Interests</span><strong id="factInterests">—</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="eyebrow">Academic Journey</div>
+    <h2 class="section-title">My <span>Education</span></h2>
+    <div class="timeline" id="educationList"><p class="empty-note">Loading…</p></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow">What I'm Good At</div>
+    <h2 class="section-title">My <span>Skills</span></h2>
+    <div class="skills-grid" id="skillsList"><p class="empty-note">Loading…</p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow">My Work</div>
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <div class="projects-grid" id="projectsList"><p class="empty-note">Loading…</p></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="eyebrow">Moments</div>
+    <h2 class="section-title">My <span>Gallery</span></h2>
+    <div class="gallery-grid" id="galleryList"><p class="empty-note">No photos added yet.</p></div>
+  </div>
+</section>
+
+<section id="certificates">
+  <div class="wrap">
+    <div class="eyebrow">Recognitions</div>
+    <h2 class="section-title">My <span>Certificates</span></h2>
+    <div class="certs-grid" id="certificatesList"><p class="empty-note">No certificates added yet.</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get In Touch</div>
+    <h2 class="section-title">Contact <span>Me</span></h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="item"><span class="icon">✉</span><div><h4>Email</h4><p id="contactEmail">—</p></div></div>
+        <div class="item"><span class="icon">📞</span><div><h4>Phone</h4><p id="contactPhone">—</p></div></div>
+        <div class="item"><span class="icon">📍</span><div><h4>Location</h4><p id="contactLocation">—</p></div></div>
+      </div>
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit" class="send-btn">Send Message</button>
+        <div id="form-status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> <span id="footerName">Arnab Sen</span>. Content managed via
+  <a href="/admin/">/admin</a>.
+</footer>
+
+<script>
+  // ---------- Mobile menu ----------
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // ---------- Active nav on scroll ----------
+  const sections = document.querySelectorAll('section[id]');
+  const navItems = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => { if (window.scrollY >= sec.offsetTop - 120) current = sec.id; });
+    navItems.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('form-status').textContent = 'Thanks! (Connect this form to an email service to receive real messages.)';
+    this.reset();
+  });
+
+  // ---------- Fetch content from JSON files (edited via /admin) ----------
+  const j = url => fetch(url + '?v=' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
+
+  (async function loadContent(){
+    // HERO
+    const hero = await j('content/hero.json');
+    if (hero) {
+      document.getElementById('navName').textContent = hero.name || 'Arnab Sen';
+      document.getElementById('footerName').textContent = hero.name || 'Arnab Sen';
+      if (hero.name) {
+        const parts = hero.name.trim().split(' ');
+        const last = parts.pop();
+        document.getElementById('heroName').innerHTML = parts.join(' ') + ' <span>' + last + '</span>';
+      }
+      document.getElementById('heroRole').textContent = hero.role || '';
+      document.getElementById('heroIntro').textContent = hero.intro || '';
+      const photoWrap = document.getElementById('heroPhotoWrap');
+      if (hero.photo) {
+        photoWrap.outerHTML = '<img id="heroPhotoWrap" src="' + hero.photo + '" alt="' + (hero.name||'') + '">';
+      }
+      const soc = document.getElementById('heroSocials');
+      const links = [
+        ['instagram','IG'], ['linkedin','in'], ['github','GH']
+      ];
+      links.forEach(([key,label]) => {
+        if (hero[key]) { const a=document.createElement('a'); a.href=hero[key]; a.target='_blank'; a.textContent=label; soc.appendChild(a); }
+      });
+      if (hero.email) { const a=document.createElement('a'); a.href='mailto:'+hero.email; a.textContent='✉'; soc.appendChild(a); }
+      if (hero.cv) { const btn=document.getElementById('cvBtn'); btn.href=hero.cv; btn.style.display='inline-flex'; }
+    }
+
+    // ABOUT
+    const about = await j('content/about.json');
+    if (about) {
+      document.getElementById('aboutP1').textContent = about.paragraph1 || '';
+      document.getElementById('aboutP2').textContent = about.paragraph2 || '';
+      document.getElementById('factLocation').textContent = about.location || '—';
+      document.getElementById('factInterests').textContent = about.interests || '—';
+      const photoWrap = document.getElementById('aboutPhotoWrap');
+      if (about.photo) photoWrap.innerHTML = '<img src="' + about.photo + '">';
+      else photoWrap.textContent = 'No photo added yet.';
+    }
+    const heroForName = await j('content/hero.json');
+    if (heroForName) document.getElementById('factName').textContent = heroForName.name || '—';
+
+    // CONTACT
+    const contact = await j('content/contact.json');
+    if (contact) {
+      document.getElementById('contactEmail').textContent = contact.email || '—';
+      document.getElementById('contactPhone').textContent = contact.phone || '—';
+      document.getElementById('contactLocation').textContent = contact.location || '—';
+    }
+
+    // EDUCATION
+    const edu = await j('content/education.json');
+    const eduEl = document.getElementById('educationList');
+    if (edu && edu.items && edu.items.length) {
+      eduEl.innerHTML = edu.items.map(it => `
+        <div class="tl-item">
+          <h3>${esc(it.title)}</h3>
+          <div class="tl-meta">${esc(it.meta||'')}</div>
+          <p>${esc(it.description||'')}</p>
+        </div>`).join('');
+    } else eduEl.innerHTML = '<p class="empty-note">No education entries added yet.</p>';
+
+    // SKILLS
+    const sk = await j('content/skills.json');
+    const skEl = document.getElementById('skillsList');
+    if (sk && sk.categories && sk.categories.length) {
+      skEl.innerHTML = sk.categories.map(cat => `
+        <div class="skill-card">
+          <h3>${esc(cat.category)}</h3>
+          ${(cat.items||[]).map(it => `
+            <div class="skill-bar-row">
+              <div class="lbl"><span>${esc(it.name)}</span><span>${it.level}%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:${it.level}%"></div></div>
+            </div>`).join('')}
+        </div>`).join('');
+    } else skEl.innerHTML = '<p class="empty-note">No skills added yet.</p>';
+
+    // PROJECTS
+    const pr = await j('content/projects.json');
+    const prEl = document.getElementById('projectsList');
+    if (pr && pr.items && pr.items.length) {
+      prEl.innerHTML = pr.items.map(it => `
+        <div class="project-card">
+          <div class="project-thumb">${it.image ? `<img src="${it.image}">` : 'No image'}</div>
+          <div class="project-body">
+            <h3>${esc(it.title)}</h3>
+            <p>${esc(it.description||'')}</p>
+            ${(it.tags||'').split(',').filter(t=>t.trim()).map(t=>`<span class="tag">${esc(t.trim())}</span>`).join('')}
+          </div>
+        </div>`).join('');
+    } else prEl.innerHTML = '<p class="empty-note">No projects added yet.</p>';
+
+    // GALLERY
+    const gal = await j('content/gallery.json');
+    const galEl = document.getElementById('galleryList');
+    if (gal && gal.items && gal.items.length) {
+      galEl.innerHTML = gal.items.map(it => `
+        <div class="gallery-item">${it.image ? `<img src="${it.image}" alt="${esc(it.caption||'')}">` : esc(it.caption||'Photo')}</div>`).join('');
+    }
+
+    // CERTIFICATES
+    const cert = await j('content/certificates.json');
+    const certEl = document.getElementById('certificatesList');
+    if (cert && cert.items && cert.items.length) {
+      certEl.innerHTML = cert.items.map(it => `
+        <div class="cert-card">
+          <div class="icon">📜</div>
+          <div><h3>${it.file ? `<a href="${it.file}" target="_blank">${esc(it.title)}</a>` : esc(it.title)}</h3><p>${esc(it.meta||'')}</p></div>
+        </div>`).join('');
+    }
+  })();
+
+  function esc(s){
+    if (!s) return '';
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+</script>
+
+</body>
+</html>
